@@ -1,0 +1,35 @@
+:root {
+  --color-bg:         #0A0F1E;
+  --color-bg-card:    #1A2332;
+  --color-bg-nav:     rgba(10, 15, 30, 0.85);
+  --color-primary:    #00D4FF;
+  --color-hover:      #4A9EBF;
+  --color-text:       #FFFFFF;
+  --color-text-muted: #8A9BBD;
+  --color-border:     rgba(0, 212, 255, 0.15);
+
+  --accent-cyan:   #00D4FF;
+  --accent-green:  #00FF9D;
+  --accent-purple: #B47BFF;
+  --accent-orange: #FF8C42;
+  --accent-blue:   #4D9EFF;
+  --accent-pink:   #FF6B9D;
+  --accent-yellow: #FFD166;
+  --accent-teal:   #06D6A0;
+
+  --font-title: 'Syne', sans-serif;
+  --font-body:  'Noto Sans KR', sans-serif;
+
+  --radius:     12px;
+  --radius-sm:  6px;
+  --transition: 0.3s ease;
+  --shadow:     0 4px 24px rgba(0, 212, 255, 0.08);
+  --shadow-lg:  0 8px 40px rgba(0, 212, 255, 0.16);
+
+  --nav-height:      68px;
+  --admin-sidebar:   220px;
+  --container:       1180px;
+
+  --skeleton-base:   #1A2332;
+  --skeleton-shine:  #243044;
+}

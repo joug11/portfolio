@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEV.HJ Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/admin.css" />
+  <style>
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== 로그인 / 초기 설정 ===================== -->
+  <div id="loginWrap" class="admin-login-wrap">
+
+    <!-- 초기 비밀번호 설정 (최초 방문 시) -->
+    <div id="setupView" class="admin-login-card hidden">
+      <div class="admin-login-logo">DEV.HJ Admin</div>
+      <p class="admin-login-sub">관리자 비밀번호를 설정하세요</p>
+
+      <div class="form-group">
+        <label class="form-label">비밀번호</label>
+        <input class="form-input" id="setupPw" type="password" placeholder="사용할 비밀번호 입력" autocomplete="new-password" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">비밀번호 확인</label>
+        <input class="form-input" id="setupPw2" type="password" placeholder="비밀번호 재입력" autocomplete="new-password" />
+      </div>
+      <button class="btn btn-primary" id="setupBtn" style="width:100%;margin-top:0.5rem">비밀번호 설정</button>
+      <p id="setupError" class="admin-login-error"></p>
+    </div>
+
+    <!-- 로그인 폼 -->
+    <div id="loginView" class="admin-login-card">
+      <div class="admin-login-logo">DEV.HJ Admin</div>
+      <p class="admin-login-sub">관리자 로그인</p>
+
+      <div class="form-group">
+        <label class="form-label">비밀번호</label>
+        <input class="form-input" id="loginPw" type="password" placeholder="비밀번호 입력" autocomplete="current-password" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">GitHub PAT</label>
+        <input class="form-input" id="loginPat" type="password" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off" />
+        <span class="form-hint">PAT는 이 탭에서만 유지되며, 탭 종료 시 자동 삭제됩니다.</span>
+      </div>
+      <button class="btn btn-primary" id="loginBtn" style="width:100%;margin-top:0.5rem">로그인</button>
+      <p id="loginError" class="admin-login-error"></p>
+
+      <p class="admin-login-note">
+        GitHub PAT 발급: Settings → Developer settings → Personal access tokens<br />
+        필요 권한: <code>repo</code> (Contents 읽기/쓰기)
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ===================== 관리자 대시보드 ===================== -->
+  <div id="dashboardWrap" class="admin-layout hidden">
+
+    <!-- 사이드바 -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">DEV.HJ Admin</div>
+        <div class="sidebar-sub">포트폴리오 관리자</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-nav-item" data-route="#/profile">
+          <span class="sidebar-nav-icon">👤</span> 프로필
+        </div>
+        <div class="sidebar-nav-item" data-route="#/projects">
+          <span class="sidebar-nav-icon">📁</span> 프로젝트
+        </div>
+        <div class="sidebar-nav-item" data-route="#/skills">
+          <span class="sidebar-nav-icon">🛠</span> 스킬
+        </div>
+        <div class="sidebar-nav-item" data-route="#/experience">
+          <span class="sidebar-nav-icon">📅</span> 경력
+        </div>
+        <hr class="sidebar-divider" />
+        <div class="sidebar-nav-item" data-route="#/settings">
+          <span class="sidebar-nav-icon">⚙️</span> GitHub 설정
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="sidebar-logout" id="adminLogout">
+          🚪 로그아웃
+        </button>
+      </div>
+    </aside>
+
+    <!-- 메인 영역 -->
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <span class="admin-topbar-title" id="adminPageTitle">관리자</span>
+        <div class="admin-topbar-actions">
+          <a href="../index.html" target="_blank" rel="noopener" class="admin-preview-link">🔗 포트폴리오 보기</a>
+        </div>
+      </header>
+
+      <div class="admin-content" id="adminContent">
+        <!-- 에디터가 여기 렌더링됩니다 -->
+      </div>
+    </main>
+
+  </div>
+
+  <script type="module" src="js/admin-main.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+/* 1. Shared Base */
+@import '../../shared/css/base/variables.css';
+@import '../../shared/css/base/reset.css';
+@import '../../shared/css/base/typography.css';
+
+/* 2. Shared Components */
+@import '../../shared/css/components/buttons.css';
+@import '../../shared/css/components/cards.css';
+@import '../../shared/css/components/animations.css';
+
+/* 3. Public Layout */
+@import './layout/navbar.css';
+@import './layout/footer.css';
+
+/* 4. Public Sections */
+@import './sections/hero.css';
+@import './sections/about.css';
+@import './sections/skills.css';
+@import './sections/projects.css';
+@import './sections/experience.css';
+@import './sections/contact.css';
+
+/* 5. Scroll-top Button */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: all var(--transition);
+  box-shadow: 0 4px 16px rgba(0, 212, 255, 0.35);
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-top:hover {
+  background: var(--color-hover);
+  transform: translateY(-2px);
+}
+
+.scroll-top svg {
+  width: 20px;
+  height: 20px;
+}

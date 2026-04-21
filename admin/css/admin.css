@@ -1,0 +1,63 @@
+/* 1. Shared Base */
+@import '../../shared/css/base/variables.css';
+@import '../../shared/css/base/reset.css';
+@import '../../shared/css/base/typography.css';
+
+/* 2. Shared Components */
+@import '../../shared/css/components/buttons.css';
+@import '../../shared/css/components/forms.css';
+
+/* 3. Admin Layout */
+@import './layout/sidebar.css';
+@import './layout/dashboard.css';
+
+/* 4. Login Page */
+.admin-login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.admin-login-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--shadow-lg);
+}
+
+.admin-login-logo {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.admin-login-sub {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.admin-login-note {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: 1.25rem;
+  line-height: 1.6;
+}
+
+.admin-login-error {
+  font-size: 0.8rem;
+  color: #ff4d4f;
+  text-align: center;
+  margin-top: 0.75rem;
+  min-height: 1.2em;
+}

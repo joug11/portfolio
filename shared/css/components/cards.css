@@ -1,0 +1,76 @@
+.about-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.about-card:hover {
+  border-color: var(--color-primary);
+  transform: translateX(6px);
+}
+
+.about-card-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.about-card strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  margin-bottom: 2px;
+}
+
+.about-card-num {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.project-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.project-card:hover::before { opacity: 1; }
+
+.accent-cyan   { --card-accent: var(--accent-cyan); }
+.accent-green  { --card-accent: var(--accent-green); }
+.accent-purple { --card-accent: var(--accent-purple); }
+.accent-orange { --card-accent: var(--accent-orange); }
+.accent-blue   { --card-accent: var(--accent-blue); }
+.accent-pink   { --card-accent: var(--accent-pink); }
+.accent-yellow { --card-accent: var(--accent-yellow); }
+.accent-teal   { --card-accent: var(--accent-teal); }
+
+.project-card:hover { border-color: var(--card-accent); }
+.project-card::before { background: var(--card-accent); }

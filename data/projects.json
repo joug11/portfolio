@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "공학적 방벽 3차원 모니터링 시스템",
+    "org": "한국원자력환경공단 (경주)",
+    "desc": "폐쇄망 환경의 지반 센서 데이터 모니터링 시스템. PostgreSQL 파티셔닝 및 부분인덱스 적용으로 쿼리 응답속도 <strong>1.54s → 471ms</strong> 개선. HikariCP 연결풀 최적화 적용.",
+    "tags": ["PostgreSQL", "파티셔닝", "HikariCP", "성능최적화"],
+    "accent": "cyan",
+    "image": "",
+    "links": { "github": null, "demo": null },
+    "order": 1,
+    "visible": true
+  },
+  {
+    "id": 2,
+    "title": "주상도 통합관리 시스템",
+    "org": "벽산엔지니어링",
+    "desc": "시추공 지층정보 등록·관리 시스템 개발. VO/SQL 설계, DB 컬럼 추가, 첨부파일 무제한 업로드, 워크플로우(WORKFLOW) UI 개발.",
+    "tags": ["Java", "Spring", "MySQL", "UI개발"],
+    "accent": "green",
+    "image": "",
+    "links": { "github": null, "demo": null },
+    "order": 2,
+    "visible": true
+  },
+  {
+    "id": 3,
+    "title": "귀어귀촌 통합관리 시스템",
+    "org": "공공기관 (귀어귀촌 센터)",
+    "desc": "CTI 상담현황 연동, 회원관리, 교육관리, 통계관리 등 다기능 관리자 시스템 유지보수 및 기능 고도화. 슬로우쿼리 개선 및 테이블 인덱스 추가로 성능 향상.",
+    "tags": ["Java", "MySQL", "CTI연동", "슬로우쿼리"],
+    "accent": "purple",
+    "image": "",
+    "links": { "github": null, "demo": null },
+    "order": 3,
+    "visible": true
+  },
+  {
+    "id": 4,
+    "title": "시추공 모니터링 시스템",
+    "org": "KIGAM (한국지질자원연구원)",
+    "desc": "시추공 모니터링 필요 테이블 설계 및 개발. 데이터 수집·조회 시스템 구축.",
+    "tags": ["Java", "DB설계", "모니터링"],
+    "accent": "orange",
+    "image": "",
+    "links": { "github": null, "demo": null },
+    "order": 4,
+    "visible": true
+  },
+  {
+    "id": 5,
+    "title": "R&D 교육 관리 시스템 (오레오)",
+    "org": "경운대학교",
+    "desc": "R&D 교육일정·신청현황 조회/관리 기능 개발. 사용자/관리자 화면 이원화 구성. 정렬·필터 기능 구현.",
+    "tags": ["Java", "Spring", "JSP", "교육시스템"],
+    "accent": "blue",
+    "image": "",
+    "links": { "github": null, "demo": null },
+    "order": 5,
+    "visible": true
+  },
+  {
+    "id": 6,
+    "title": "간호학과 학습성과 관리시스템",
+    "org": "대구과학대학교",
+    "desc": "학습성과 달성도 차트·표 오류 분석 및 해결. 누락 라이브러리(toastui-chart) 원인 파악 후 서버 배포 조치.",
+    "tags": ["Java", "eGovFramework", "트러블슈팅"],
+    "accent": "pink",
+    "image": "",
+    "links": { "github": null, "demo": null },
+    "order": 6,
+    "visible": true
+  },
+  {
+    "id": 7,
+    "title": "냅킨 제조 스마트 자동화 시스템",
+    "org": "에스엘페이퍼",
+    "desc": "PLC 연동 기반 냅킨 제조 MES(제조실행시스템) 풀스택 개발. 생산계획·실적 관리, 입고·출고·재고조정, 자재사용 관리, 불량 분석·공정 관리, 권한그룹별 메뉴 제어 구현.",
+    "tags": ["Java", "Spring", "MySQL", "PLC연동", "MES", "스마트팩토리"],
+    "accent": "yellow",
+    "image": "",
+    "links": { "github": null, "demo": null },
+    "order": 7,
+    "visible": true
+  },
+  {
+    "id": 8,
+    "title": "다나드림몰 쇼핑몰 플랫폼",
+    "org": "coniaworld (다나드림)",
+    "desc": "Python FastAPI + Vue.js 기반 멀티테넌트 쇼핑몰 플랫폼. 의료면허 조회 API(데이터허브) 연동, 커뮤니티 게시판, 회원 등급별(병원·의사·일반) 테마 노출 제어 기능 개발.",
+    "tags": ["Python", "FastAPI", "Vue.js", "API연동", "멀티테넌트"],
+    "accent": "teal",
+    "image": "",
+    "links": { "github": null, "demo": null },
+    "order": 8,
+    "visible": true
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "category": "backend",
+    "label": "Backend",
+    "order": 1,
+    "visible": true,
+    "items": [
+      { "id": 1, "name": "Java",              "level": 5 },
+      { "id": 2, "name": "Spring Framework",  "level": 4 },
+      { "id": 3, "name": "eGovFramework",     "level": 4 },
+      { "id": 4, "name": "JSP",               "level": 4 },
+      { "id": 5, "name": "Servlet",           "level": 4 },
+      { "id": 6, "name": "MyBatis",           "level": 4 }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "database",
+    "label": "Database",
+    "order": 2,
+    "visible": true,
+    "items": [
+      { "id": 1, "name": "MySQL",           "level": 4 },
+      { "id": 2, "name": "PostgreSQL",      "level": 5 },
+      { "id": 3, "name": "Oracle",          "level": 3 },
+      { "id": 4, "name": "MariaDB",         "level": 3 },
+      { "id": 5, "name": "DB 파티셔닝",     "level": 4 },
+      { "id": 6, "name": "인덱스 최적화",   "level": 4 },
+      { "id": 7, "name": "HikariCP",        "level": 3 }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "devops",
+    "label": "DevOps & Tools",
+    "order": 3,
+    "visible": true,
+    "items": [
+      { "id": 1, "name": "Jenkins",         "level": 3 },
+      { "id": 2, "name": "Linux (Ubuntu)",  "level": 3 },
+      { "id": 3, "name": "Cron",            "level": 3 },
+      { "id": 4, "name": "SVN",             "level": 3 },
+      { "id": 5, "name": "Git",             "level": 4 },
+      { "id": 6, "name": "GitHub",          "level": 4 },
+      { "id": 7, "name": "Tomcat",          "level": 3 }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "frontend",
+    "label": "Frontend",
+    "order": 4,
+    "visible": true,
+    "items": [
+      { "id": 1, "name": "JavaScript",              "level": 4 },
+      { "id": 2, "name": "jQuery",                  "level": 4 },
+      { "id": 3, "name": "HTML5",                   "level": 4 },
+      { "id": 4, "name": "CSS3",                    "level": 4 },
+      { "id": 5, "name": "AJAX",                    "level": 4 },
+      { "id": 6, "name": "Vue.js",                  "level": 3 },
+      { "id": 7, "name": "엑셀 다운로드 (Apache POI)", "level": 3 }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "etc",
+    "label": "Etc",
+    "order": 5,
+    "visible": true,
+    "items": [
+      { "id": 1, "name": "Python",          "level": 3 },
+      { "id": 2, "name": "FastAPI",         "level": 3 },
+      { "id": 3, "name": "보안점검",        "level": 3 },
+      { "id": 4, "name": "MQTT",            "level": 2 },
+      { "id": 5, "name": "MES 시스템",      "level": 3 },
+      { "id": 6, "name": "PLC 연동",        "level": 2 },
+      { "id": 7, "name": "슬로우쿼리 분석", "level": 4 },
+      { "id": 8, "name": "시스템 모니터링", "level": 3 }
+    ]
+  }
+]
