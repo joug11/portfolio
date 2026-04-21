@@ -20,8 +20,13 @@ export class ProfileRenderer {
   }
 
   renderAbout(profile) {
-    const descEl  = document.getElementById('aboutDescription');
-    const cardsEl = document.getElementById('aboutCards');
+    const descEl   = document.getElementById('aboutDescription');
+    const cardsEl  = document.getElementById('aboutCards');
+    const circleEl = document.getElementById('profileCircle');
+
+    if (circleEl && profile.about?.image) {
+      circleEl.innerHTML = `<img src="${escapeHtml(profile.about.image)}" alt="프로필 사진" style="width:100%;height:100%;object-fit:cover" />`;
+    }
 
     if (descEl && profile.about?.description) {
       descEl.textContent = profile.about.description;
