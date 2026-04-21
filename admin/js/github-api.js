@@ -30,6 +30,30 @@ export class GitHubApiService {
     return { content, sha: json.sha };
   }
 
+  async getFileSha(path) {
+    const url = `${BASE}/repos/${this.owner}/${this.repo}/contents/${path}?ref=${this.branch}`;
+    const res = await fetch(url, { headers: this._headers() });
+    if (!res.ok) return null;
+    const json = await res.json();
+    return json.sha || null;
+  }
+
+  async putRawFile(path, base64Content, sha, message) {
+    const url  = `${BASE}/repos/${this.owner}/${this.repo}/contents/${path}`;
+    const body = { message, content: base64Content, branch: this.branch };
+    if (sha) body.sha = sha;
+    const res = await fetch(url, {
+      method:  'PUT',
+      headers: this._headers(),
+      body:    JSON.stringify(body),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(`이미지 업로드 실패 [${res.status}]: ${err.message || '알 수 없는 오류'}`);
+    }
+    return res.json();
+  }
+
   async putFile(path, data, sha, message) {
     const url     = `${BASE}/repos/${this.owner}/${this.repo}/contents/${path}`;
     const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
