@@ -7,11 +7,31 @@
     "order": 1,
     "visible": true,
     "items": [
-      { "id": 1, "text": "벽산엔지니어링 주상도 통합관리 고도화",          "sub": null },
-      { "id": 2, "text": "경운대 오레오시스템 R&D 교육 기능 개발",         "sub": null },
-      { "id": 3, "text": "귀어귀촌 CTI 연동 및 만족도 조사 시스템 추가",   "sub": null },
-      { "id": 4, "text": "보안권고문 대응 (경주원자력환경공단)",            "sub": null },
-      { "id": 5, "text": "FMS 시설관리 시스템 신규 개발 착수",             "sub": null }
+      {
+        "id": 1,
+        "text": "벽산엔지니어링 주상도 통합관리 고도화",
+        "sub": null
+      },
+      {
+        "id": 2,
+        "text": "경운대 오레오시스템 R&D 교육 기능 개발",
+        "sub": null
+      },
+      {
+        "id": 3,
+        "text": "귀어귀촌 CTI 연동 및 만족도 조사 시스템 추가",
+        "sub": null
+      },
+      {
+        "id": 4,
+        "text": "보안권고문 대응 (경주원자력환경공단)",
+        "sub": null
+      },
+      {
+        "id": 5,
+        "text": "FMS 시설관리 시스템 신규 개발 착수",
+        "sub": null
+      }
     ]
   },
   {
@@ -20,13 +40,33 @@
     "startDate": "2025-01",
     "endDate": "2025-12",
     "order": 2,
-    "visible": true,
+    "visible": false,
     "items": [
-      { "id": 1, "text": "에스엘페이퍼 MES 제조실행시스템 풀스택 개발",    "sub": "생산·재고·자재관리, PLC 연동, 권한그룹별 메뉴 제어" },
-      { "id": 2, "text": "다나드림몰 쇼핑몰 플랫폼 개발",                  "sub": "Python FastAPI + Vue.js, 의료면허 API 연동, 커뮤니티 게시판" },
-      { "id": 3, "text": "귀어귀촌 통합관리 시스템 고도화 (CTI 연동·슬로우쿼리 개선)", "sub": null },
-      { "id": 4, "text": "대구과학대학교 간호학과 학습성과 관리시스템 트러블슈팅", "sub": null },
-      { "id": 5, "text": "경운대학교 R&D 교육관리시스템 기능 개발",        "sub": null }
+      {
+        "id": 1,
+        "text": "에스엘페이퍼 MES 제조실행시스템 풀스택 개발",
+        "sub": "생산·재고·자재관리, PLC 연동, 권한그룹별 메뉴 제어"
+      },
+      {
+        "id": 2,
+        "text": "다나드림몰 쇼핑몰 플랫폼 개발",
+        "sub": "Python FastAPI + Vue.js, 의료면허 API 연동, 커뮤니티 게시판"
+      },
+      {
+        "id": 3,
+        "text": "귀어귀촌 통합관리 시스템 고도화 (CTI 연동·슬로우쿼리 개선)",
+        "sub": null
+      },
+      {
+        "id": 4,
+        "text": "대구과학대학교 간호학과 학습성과 관리시스템 트러블슈팅",
+        "sub": null
+      },
+      {
+        "id": 5,
+        "text": "경운대학교 R&D 교육관리시스템 기능 개발",
+        "sub": null
+      }
     ]
   },
   {
@@ -37,11 +77,31 @@
     "order": 3,
     "visible": true,
     "items": [
-      { "id": 1, "text": "한국원자력환경공단 3차원 모니터링 시스템 성능 최적화", "sub": "PostgreSQL 파티셔닝·부분인덱스 적용 → 쿼리 1.54s → 471ms" },
-      { "id": 2, "text": "HikariCP 연결풀 도입으로 DB 응답속도 개선",      "sub": null },
-      { "id": 3, "text": "Jenkins CI/CD 파이프라인 구성",                  "sub": null },
-      { "id": 4, "text": "Linux Ubuntu 서버 환경 구성 및 cron 스케줄 관리", "sub": null },
-      { "id": 5, "text": "KIGAM 시추공 모니터링 시스템 테이블 설계 및 개발", "sub": null }
+      {
+        "id": 1,
+        "text": "한국원자력환경공단 3차원 모니터링 시스템 성능 최적화",
+        "sub": "PostgreSQL 파티셔닝·부분인덱스 적용 → 쿼리 1.54s → 471ms"
+      },
+      {
+        "id": 2,
+        "text": "HikariCP 연결풀 도입으로 DB 응답속도 개선",
+        "sub": null
+      },
+      {
+        "id": 3,
+        "text": "Jenkins CI/CD 파이프라인 구성",
+        "sub": null
+      },
+      {
+        "id": 4,
+        "text": "Linux Ubuntu 서버 환경 구성 및 cron 스케줄 관리",
+        "sub": null
+      },
+      {
+        "id": 5,
+        "text": "KIGAM 시추공 모니터링 시스템 테이블 설계 및 개발",
+        "sub": null
+      }
     ]
   }
 ]
