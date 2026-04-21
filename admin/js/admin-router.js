@@ -5,6 +5,11 @@ export class AdminRouter {
   }
 
   init() {
+    document.querySelectorAll('.sidebar-nav-item').forEach(item => {
+      item.addEventListener('click', () => {
+        window.location.hash = item.dataset.route;
+      });
+    });
     window.addEventListener('hashchange', () => this._handle());
     this._handle();
   }
