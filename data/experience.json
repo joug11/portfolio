@@ -5,7 +5,7 @@
     "startDate": "2026-01",
     "endDate": null,
     "order": 1,
-    "visible": false,
+    "visible": true,
     "items": [
       {
         "id": 1,
