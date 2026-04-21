@@ -9,7 +9,7 @@ export class ProjectsEditor {
     this.ghApi     = ghApi;
     this._sha      = null;
     this._data     = [];
-    this._editing  = null;
+    this._bound    = false;
   }
 
   async load() {
@@ -19,9 +19,28 @@ export class ProjectsEditor {
       this._data = content;
       this._sha  = sha;
       this._render();
+      if (!this._bound) {
+        this._bound = true;
+        this._bindEvents();
+      }
     } catch (e) {
       this.container.innerHTML = `<p style="color:#ff4d4f;padding:1rem">${escapeHtml(e.message)}</p>`;
     }
+  }
+
+  _bindEvents() {
+    this.container.addEventListener('click', e => {
+      const btn = e.target.closest('[data-action]');
+      if (!btn) return;
+      const id     = Number(btn.dataset.id);
+      const action = btn.dataset.action;
+      if (action === 'add-proj') this._openForm(null);
+      if (action === 'edit')     this._openForm(id);
+      if (action === 'toggle')   this._toggle(id);
+      if (action === 'delete')   this._delete(id);
+      if (action === 'up')       this._move(id, -1);
+      if (action === 'down')     this._move(id, 1);
+    });
   }
 
   _render() {
@@ -33,9 +52,9 @@ export class ProjectsEditor {
         <span class="item-row-org">${escapeHtml(p.org)}</span>
         <span class="visibility-badge ${p.visible ? 'visible' : 'hidden'}">${p.visible ? '공개' : '숨김'}</span>
         <div class="item-row-actions">
-          <button class="icon-btn" data-action="up"   data-id="${p.id}" title="위로">▲</button>
-          <button class="icon-btn" data-action="down" data-id="${p.id}" title="아래로">▼</button>
-          <button class="icon-btn" data-action="edit" data-id="${p.id}" title="수정">✏️</button>
+          <button class="icon-btn" data-action="up"     data-id="${p.id}" title="위로">▲</button>
+          <button class="icon-btn" data-action="down"   data-id="${p.id}" title="아래로">▼</button>
+          <button class="icon-btn" data-action="edit"   data-id="${p.id}" title="수정">✏️</button>
           <button class="icon-btn" data-action="toggle" data-id="${p.id}" title="공개/숨김">👁</button>
           <button class="icon-btn danger" data-action="delete" data-id="${p.id}" title="삭제">🗑</button>
         </div>
@@ -45,27 +64,14 @@ export class ProjectsEditor {
     this.container.innerHTML = `
       <div class="editor-header">
         <span class="editor-title">프로젝트 목록 (${this._data.length}개)</span>
-        <button class="btn btn-primary" id="proj-add">+ 새 프로젝트</button>
+        <button class="btn btn-primary" data-action="add-proj">+ 새 프로젝트</button>
       </div>
-      <div class="item-list" id="proj-list">${listHtml}</div>
+      <div class="item-list">${listHtml}</div>
       <div id="proj-form-wrap"></div>
       <div style="text-align:right;margin-top:1rem">
         <div class="github-status" id="proj-status" style="display:inline-flex"></div>
       </div>
     `;
-
-    document.getElementById('proj-add').addEventListener('click', () => this._openForm(null));
-    document.getElementById('proj-list').addEventListener('click', e => {
-      const btn = e.target.closest('[data-action]');
-      if (!btn) return;
-      const id     = Number(btn.dataset.id);
-      const action = btn.dataset.action;
-      if (action === 'edit')   this._openForm(id);
-      if (action === 'toggle') this._toggle(id);
-      if (action === 'delete') this._delete(id);
-      if (action === 'up')     this._move(id, -1);
-      if (action === 'down')   this._move(id, 1);
-    });
   }
 
   _openForm(id) {

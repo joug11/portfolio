@@ -7,6 +7,7 @@ export class ExperienceEditor {
     this.ghApi     = ghApi;
     this._sha      = null;
     this._data     = [];
+    this._bound    = false;
   }
 
   async load() {
@@ -16,9 +17,27 @@ export class ExperienceEditor {
       this._data = content;
       this._sha  = sha;
       this._render();
+      if (!this._bound) {
+        this._bound = true;
+        this._bindEvents();
+      }
     } catch (e) {
       this.container.innerHTML = `<p style="color:#ff4d4f;padding:1rem">${escapeHtml(e.message)}</p>`;
     }
+  }
+
+  _bindEvents() {
+    this.container.addEventListener('click', e => {
+      const btn = e.target.closest('[data-action]');
+      if (!btn) return;
+      const action = btn.dataset.action;
+      if (action === 'exp-toggle')  this._toggle(Number(btn.dataset.id));
+      if (action === 'exp-delete')  this._delete(Number(btn.dataset.id));
+      if (action === 'exp-edit')    this._openPeriodForm(Number(btn.dataset.id));
+      if (action === 'item-add')    this._addItem(Number(btn.dataset.expId));
+      if (action === 'item-delete') this._deleteItem(Number(btn.dataset.expId), Number(btn.dataset.itemId));
+      if (action === 'add-period')  this._openPeriodForm(null);
+    });
   }
 
   _render() {
@@ -52,7 +71,7 @@ export class ExperienceEditor {
     this.container.innerHTML = `
       <div class="editor-header">
         <span class="editor-title">경력 기간 (${this._data.length}개)</span>
-        <button class="btn btn-primary" id="exp-add-period">+ 기간 추가</button>
+        <button class="btn btn-primary" data-action="add-period">+ 기간 추가</button>
       </div>
       ${periodsHtml}
       <div id="exp-form-wrap"></div>
@@ -60,19 +79,6 @@ export class ExperienceEditor {
         <div class="github-status" id="exp-status" style="display:inline-flex"></div>
       </div>
     `;
-
-    this.container.addEventListener('click', e => {
-      const btn = e.target.closest('[data-action]');
-      if (!btn) return;
-      const action = btn.dataset.action;
-      if (action === 'exp-toggle') this._toggle(Number(btn.dataset.id));
-      if (action === 'exp-delete') this._delete(Number(btn.dataset.id));
-      if (action === 'exp-edit')   this._openPeriodForm(Number(btn.dataset.id));
-      if (action === 'item-add')   this._addItem(Number(btn.dataset.expId));
-      if (action === 'item-delete') this._deleteItem(Number(btn.dataset.expId), Number(btn.dataset.itemId));
-    });
-
-    document.getElementById('exp-add-period').addEventListener('click', () => this._openPeriodForm(null));
   }
 
   _openPeriodForm(id) {
