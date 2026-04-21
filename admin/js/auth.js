@@ -53,8 +53,8 @@ export class AdminAuth {
 
   static getGitHubConfig() {
     return {
-      owner:  localStorage.getItem(OWNER_KEY)  || '',
-      repo:   localStorage.getItem(REPO_KEY)   || '',
+      owner:  localStorage.getItem(OWNER_KEY)  || 'joug11',
+      repo:   localStorage.getItem(REPO_KEY)   || 'portfolio',
       branch: localStorage.getItem(BRANCH_KEY) || 'main',
     };
   }
