@@ -2,15 +2,31 @@
   "name": "박현정",
   "nameEn": "Hyeonjeong Park",
   "greeting": "Hello, I'm",
-  "roles": ["Backend Developer", "DB Optimization Specialist", "System Integrator"],
+  "roles": [
+    "Backend Developer",
+    "DB Optimization Specialist",
+    "System Integrator"
+  ],
   "about": {
     "description": "Java/Spring 기반 백엔드 개발부터 Python FastAPI, Vue.js까지\n다양한 기술 스택으로 웹 애플리케이션을 개발하고 있습니다.\n공공기관, 환경 모니터링, 제조(MES), 쇼핑몰 플랫폼 등\n폭넓은 도메인에서 DB 최적화·보안점검·시스템 통합 경험을 보유하고 있습니다.\nPostgreSQL/MySQL 슬로우쿼리 개선과 파티셔닝으로\n실질적인 성능 향상 성과를 도출한 경험이 있습니다.",
     "image": "assets/images/profile/avatar.webp"
   },
   "stats": [
-    { "icon": "🏢", "label": "다양한 클라이언트", "value": "8+ 프로젝트" },
-    { "icon": "⚡", "label": "DB 성능 개선",      "value": "최대 70% 향상" },
-    { "icon": "🔒", "label": "보안점검",           "value": "공공기관 대응 경험" }
+    {
+      "icon": "🏢",
+      "label": "다양한 클라이언트",
+      "value": "8+ 프로젝트"
+    },
+    {
+      "icon": "⚡",
+      "label": "DB 성능 개선",
+      "value": "최대 70% 향상"
+    },
+    {
+      "icon": "🔒",
+      "label": "보안점검",
+      "value": "공공기관 대응 경험"
+    }
   ],
   "contact": {
     "email": "tgc99035@naver.com",
